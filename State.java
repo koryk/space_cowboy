@@ -16,7 +16,7 @@ import java.util.List;
             State this_state = new State(pw);
             this_state.source = my_planet.PlanetID();
             this_state.dest   = enemy_planet.PlanetID();
-            this_state.num_ships = my_planet.NumShips()/2;
+            this_state.num_ships = my_planet.NumShips()/2;            
             children.add(this_state);
           }
         } 
@@ -38,7 +38,7 @@ import java.util.List;
     		  totalShips -= num_ships;
     		  if (num_ships > pw.GetPlanet(source).NumShips()){
     			  totalPlanets++;
-    			  totalGrowth += pw.GetPlanet(source).GrowthRate();
+    			  totalGrowth += (totalGrowth*(1/totalPlanets));
     			  totalShips += num_ships - pw.GetPlanet(source).NumShips();
     		  }
     	  }
