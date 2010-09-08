@@ -36,10 +36,10 @@ import java.util.List;
     	  }
     	  if (source >= 0 && dest >= 0 && num_ships > 0){
     		  totalShips -= num_ships;
-    		  if (num_ships > pw.GetPlanet(source).NumShips()){
+    		  if (num_ships > pw.GetPlanet(dest).NumShips()){
     			  totalPlanets++;
-    			  totalGrowth += (totalGrowth*(1/totalPlanets));
-    			  totalShips += num_ships - pw.GetPlanet(source).NumShips();
+    			  totalGrowth += (totalGrowth*(1/totalPlanets));    			  
+    			  totalShips += num_ships - pw.GetPlanet(dest).NumShips();
     		  }
     	  }
     	  this.score = (totalPlanets*totalGrowth + totalShips)*(totalGrowth);    	  
